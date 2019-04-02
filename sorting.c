@@ -3,13 +3,16 @@
 //
 
 #include "sorting.h"
+
+//Function Declarations
 void merge_split(long * Array, int lb, int ub);
 void put_together(long * Array, int lb, int up, int mid);
-///
-///
+//
+
+//Functions
 void Merge_Sort(long * Array, int Size)
 {
-    merge_split(long * Array, 0, size-1);
+    merge_split(Array, 0, Size-1);
 }
 
 void merge_split(long * Array, int lb, int ub)
@@ -25,10 +28,10 @@ void merge_split(long * Array, int lb, int ub)
 
 void put_together(long * Array, int lb, int ub, int mid)
 {
-    left = calloc(mid-lb+1, sizeof(long));
-    right = calloc(ub-mid, sizeof(long));
-    memcopy(&left[0], &Array[lb], mid-lb+1);
-    memcopy(&right[0], &Array[mid+1], ub-mid);
+    long * left = calloc(mid-lb+1, sizeof(long));
+    long * right = calloc(ub-mid, sizeof(long));
+    memcpy(&left[0], &Array[lb], mid-lb+1);
+    memcpy(&right[0], &Array[mid+1], ub-mid);
     int i = lb;
     int j = mid + 1;
     int k;

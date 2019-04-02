@@ -13,23 +13,22 @@ int main(int argc, char ** argv)
     char * q = "-q";
     char * m = "-m";
     char * input1 = argv[1];
-    char * filename = argv[2];
 
     //Determine the size of the file
     FILE * infile = fopen(argv[2],"rb");
-    int * size;
-    *size = sizeof(infile) / sizeof(long);
+    int size;
+    size = sizeof(infile) / sizeof(long);
     fclose(infile);
 
     //load the unsorted array from the file
-    long * array = Load_Into_Array(argv[2], size);
+    long * array = Load_Into_Array(argv[2], &size);
     if(strcmp(input1,q) == 0){
         //Invoke Quicksort
 
     }
     else if(strcmp(input1,m) == 0){
         //Invoke MergeSort
-
+        Merge_Sort(array, size);
     }
     //Save the array to the output file
     //long * Save_From_Array(argv[3], array, size);
