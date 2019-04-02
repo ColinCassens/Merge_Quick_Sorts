@@ -10,14 +10,20 @@ long * Load_Into_Array(char * Filename, int * size);
 
 int main(int argc, char ** argv)
 {
+    if(argc != 4)
+    {
+        return EXIT_FAILURE;
+    }
+
     char * q = "-q";
     char * m = "-m";
     char * input1 = argv[1];
 
     //Determine the size of the file
     FILE * infile = fopen(argv[2],"rb");
-    int size;
-    size = sizeof(infile) / sizeof(long);
+    fseek(infile, 0, SEEK_END);
+    int file_len = ftell(infile);
+    int size = file_len / sizeof(long);
     fclose(infile);
 
     //load the unsorted array from the file

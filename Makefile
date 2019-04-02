@@ -15,6 +15,7 @@ PA5: $(OBJS)
 VAL: pa5
 	$(VAL) ./pa5
 
+
 clean:
 	rm -f *.o *.txt *.b valgrind.log pa5
 	clear
