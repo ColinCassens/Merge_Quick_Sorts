@@ -39,6 +39,7 @@ int main(int argc, char ** argv)
     //Save the array to the output file
     //long * Save_From_Array(argv[3], array, size);
 
+    free(array);
     return EXIT_SUCCESS;
 }
 

@@ -33,6 +33,7 @@ void merge_split(long * Array, int lb, int ub)
 
 void put_together(long * Array, int lb, int ub, int mid)
 {
+    //CHECK for Malloc fail in large cases and fix that issue
     long * left = malloc((mid-lb+1) * sizeof(long));
     long * right = malloc((ub-mid) *sizeof(long));
     memcpy(&left[0], &Array[lb], sizeof(long) * (mid-lb+1));

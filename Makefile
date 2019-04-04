@@ -13,8 +13,7 @@ PA5: $(OBJS)
 	$(GCC) $(TESTFLAGS) -c $*.c
 
 VAL: pa5
-	$(VAL) ./pa5
-
+	$(VAL) ./pa5 -m examples/5.b 5.out
 
 clean:
 	rm -f *.o *.txt *.b valgrind.log pa5
