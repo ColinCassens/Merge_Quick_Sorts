@@ -13,7 +13,7 @@ void put_together(long * Array, int lb, int up, int mid);
 /// Functions
 ///
 
-//MERGE SORT Not Working
+//MERGE SORT Working
 void Merge_Sort(long * Array, int Size)
 {
     merge_split(Array, 0, Size-1);
